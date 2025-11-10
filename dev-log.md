@@ -60,3 +60,4 @@ Registro técnico 56 gerado em 10/11/2025 13:48:53
 Registro técnico 57 gerado em 10/11/2025 13:48:53
 Registro técnico 58 gerado em 10/11/2025 13:48:53
 Registro técnico 59 gerado em 10/11/2025 13:48:53
+Registro técnico 60 gerado em 10/11/2025 13:48:54
