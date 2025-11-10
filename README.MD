@@ -14,20 +14,20 @@ Este projeto foi desenvolvido para atender uma demanda específica da empresa, a
 
 ## 📁 Estrutura do Projeto
 
-processar_refatorado/
+processar.py
 ├── domain/
 │ ├── init.py
-│ ├── entities.py # Entidades de domínio (Imovel)
-│ └── services.py # Serviços (formatação de números e rótulos)
+│ ├── entities.py 
+│ └── services.py 
 ├── application/
 │ ├── init.py
-│ └── use_cases.py # Caso de uso: ProcessarImoveisUseCase
+│ └── use_cases.py 
 ├── infrastructure/
 │ ├── init.py
-│ ├── excel_reader.py # Adaptador de leitura Excel
-│ └── excel_writer.py # Adaptador de escrita Excel
-├── config.py # Configurações centralizadas
-├── main.py # Ponto de entrada
+│ ├── excel_reader.py 
+│ └── excel_writer.py 
+├── config.py 
+├── main.py 
 ├── .gitignore
 ├── README.md
 └── requirements.txt
@@ -39,18 +39,17 @@ processar_refatorado/
 - pip
 
 ### Passos
+- Clone o repositório:
+- git clone https://github.com/seu-usuario/processar-imoveis.git
+- cd processar-imoveis
 
-- 1. Clone o repositório:
-git clone https://github.com/seu-usuario/processar-imoveis.git
-cd processar-imoveis
+- Crie um ambiente virtual (recomendado):
+- python -m venv venv
+- source venv/bin/activate # Linux/Mac
+- venv\Scripts\activate # Windows
 
-- 2. Crie um ambiente virtual (recomendado):
-python -m venv venv
-source venv/bin/activate # Linux/Mac
-venv\Scripts\activate # Windows
-
-- 3. Instale as dependências:
-pip install -r requirements.txt
+- Instale as dependências:
+- pip install -r requirements.txt
 
 ### Execução básica
 - python main.py "Teste tit2.xlsx" "Planilha1"
@@ -62,14 +61,14 @@ pip install -r requirements.txt
   - Padrão: `Planilha1`
 
 ### Variáveis de ambiente
-Crie um arquivo `.env` (já ignorado no `.gitignore`) para sobrescrever configurações:
+- Crie um arquivo `.env` (já ignorado no `.gitignore`) para sobrescrever configurações:
 
 - INPUT_FILE=seu_arquivo.xlsx
 - INPUT_SHEET=NomeDaPlanilha
 - OUTPUT_FILE=saida_customizada.xlsx
 
 ### Exemplo de saída
-O script gera um arquivo `dados_formatados.xlsx` com:
+- O script gera um arquivo `dados_formatados.xlsx` com:
 - Uma única planilha "Registros"
 - Cada imóvel em uma célula da coluna A (A1, A2, A3, ...)
 - Texto centralizado com quebra de linha automática
