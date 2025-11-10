@@ -15,25 +15,26 @@ Este projeto foi desenvolvido para atender uma demanda específica da empresa, a
 ## 📁 Estrutura do Projeto
 
 processar_refatorado/
+│
 ├── domain/
 │   ├── __init__.py
-│   ├── entities.py          
-│   └── services.py          
+│   ├── entities.py          # Entidades de domínio (Imovel)
+│   └── services.py          # Serviços (formatação de números e rótulos)
 │
 ├── application/
 │   ├── __init__.py
-│   └── use_cases.py         
+│   └── use_cases.py         # Caso de uso: ProcessarImoveisUseCase
 │
 ├── infrastructure/
 │   ├── __init__.py
-│   ├── excel_reader.py      
-│   └── excel_writer.py      
+│   ├── excel_reader.py      # Adaptador de leitura Excel
+│   └── excel_writer.py      # Adaptador de escrita Excel
 │
-├── config.py                
-├── main.py                  
-├── .gitignore             
-├── README.md               
-└── requirements.txt        
+├── config.py                # Configurações centralizadas
+├── main.py                  # Ponto de entrada da aplicação
+├── .gitignore               # Arquivos ignorados pelo Git
+├── README.md                # Documentação completa do projeto
+└── requirements.txt         # Dependências Python (openpyxl)     
 
 ## ⚙️ Instalação
 
