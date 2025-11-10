@@ -69,3 +69,4 @@ Registro técnico 65 gerado em 10/11/2025 13:48:54
 Registro técnico 66 gerado em 10/11/2025 13:48:55
 Registro técnico 67 gerado em 10/11/2025 13:48:55
 Registro técnico 68 gerado em 10/11/2025 13:48:55
+Registro técnico 69 gerado em 10/11/2025 13:48:55
