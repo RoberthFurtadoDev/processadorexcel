@@ -12,3 +12,4 @@ Registro técnico 8 gerado em 10/11/2025 13:48:43
 Registro técnico 9 gerado em 10/11/2025 13:48:44
 Registro técnico 10 gerado em 10/11/2025 13:48:44
 Registro técnico 11 gerado em 10/11/2025 13:48:44
+Registro técnico 12 gerado em 10/11/2025 13:48:44
