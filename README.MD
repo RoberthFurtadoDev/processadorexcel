@@ -14,23 +14,26 @@ Este projeto foi desenvolvido para atender uma demanda específica da empresa, a
 
 ## 📁 Estrutura do Projeto
 
-processar.py
+processar_refatorado/
 ├── domain/
-│ ├── init.py
-│ ├── entities.py 
-│ └── services.py 
+│   ├── __init__.py
+│   ├── entities.py          
+│   └── services.py          
+│
 ├── application/
-│ ├── init.py
-│ └── use_cases.py 
+│   ├── __init__.py
+│   └── use_cases.py         
+│
 ├── infrastructure/
-│ ├── init.py
-│ ├── excel_reader.py 
-│ └── excel_writer.py 
-├── config.py 
-├── main.py 
-├── .gitignore
-├── README.md
-└── requirements.txt
+│   ├── __init__.py
+│   ├── excel_reader.py      
+│   └── excel_writer.py      
+│
+├── config.py                
+├── main.py                  
+├── .gitignore             
+├── README.md               
+└── requirements.txt        
 
 ## ⚙️ Instalação
 
@@ -56,9 +59,9 @@ processar.py
 
 ### Parâmetros
 - **Argumento 1** (opcional): Caminho do arquivo Excel de entrada
-  - Padrão: `Teste tit2.xlsx`
+- Padrão: `Teste tit2.xlsx`
 - **Argumento 2** (opcional): Nome da planilha a processar
-  - Padrão: `Planilha1`
+- Padrão: `Planilha1`
 
 ### Variáveis de ambiente
 - Crie um arquivo `.env` (já ignorado no `.gitignore`) para sobrescrever configurações:
