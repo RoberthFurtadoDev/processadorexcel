@@ -1,121 +1,176 @@
-# 🏠 Gerador de Cards de Registros de Imóveis
+# Processador de Dados de Imóveis
 
-**Transforme planilhas Excel com registros imobiliários em cards textuais padronizados, prontos para impressão ou colagem.**  
-Ideal para **padronizar descrições de imóveis** e **otimizar processos administrativos** com um formato limpo e automatizado.
+Sistema de automação para extração e formatação de dados de imóveis a partir de planilhas Excel, gerando saída padronizada com células mescladas e centralizadas.
 
----
+## 📋 Descrição
 
-## 📋 Índice
-- [✨ Funcionalidades](#-funcionalidades)
-- [⚙️ Pré-requisitos](#️-pré-requisitos)
-- [🚀 Como Usar](#-como-usar)
-- [🧾 Exemplo de Card Gerado](#-exemplo-de-card-gerado)
-- [📥 Entrada Esperada](#-entrada-esperada)
-- [🧠 Principais Funções e Lógica](#-principais-funções-e-lógica)
-- [💡 Sugestões de Melhoria](#-sugestões-de-melhoria)
-- [📄 Licença](#-licença)
+Este projeto foi desenvolvido para atender uma demanda específica da empresa, automatizando o processamento manual de dados de imóveis. A solução reduz significativamente o tempo operacional e elimina perdas financeiras decorrentes de erros humanos no tratamento de grandes volumes de dados.
 
----
+## 🚀 Tecnologias
 
-## ✨ Funcionalidades
+- **Python 3.13+**
+- **openpyxl** - Manipulação de arquivos Excel (.xlsx)
+- **Arquitetura Hexagonal** - Separação em camadas (domínio, aplicação, infraestrutura)
 
-- 📂 **Leitura automática** de planilhas Excel (`.xlsx`) com dados imobiliários.  
-- 🧱 **Geração de cards**: cada imóvel vira um bloco descritivo completo e amigável.  
-- 🧮 **Padronização automática**:  
-  - Conversão de áreas (m²)  
-  - Pluralização correta de cômodos  
-  - Formatação de números no padrão brasileiro  
-- 📤 **Exportação formatada**:  
-  - Cards em **coluna única**  
-  - Altura de linha ajustada automaticamente  
-  - Bordas finas e alinhamento central  
+## 📁 Estrutura do Projeto
 
----
+processar_refatorado/
+├── domain/
+│ ├── init.py
+│ ├── entities.py # Entidades de domínio (Imovel)
+│ └── services.py # Serviços (formatação de números e rótulos)
+├── application/
+│ ├── init.py
+│ └── use_cases.py # Caso de uso: ProcessarImoveisUseCase
+├── infrastructure/
+│ ├── init.py
+│ ├── excel_reader.py # Adaptador de leitura Excel
+│ └── excel_writer.py # Adaptador de escrita Excel
+├── config.py # Configurações centralizadas
+├── main.py # Ponto de entrada
+├── .gitignore
+├── README.md
+└── requirements.txt
 
-## ⚙️ Pré-requisitos
+text
 
-- Python **3.x**
-- Biblioteca **openpyxl**
+## ⚙️ Instalação
 
-# Instale as dependências com:
+### Pré-requisitos
+- Python 3.13 ou superior
+- pip
 
-```bash
-pip install openpyxl
-```
+### Passos
 
-## 🚀 Como Usar
+1. Clone o repositório:
+git clone https://github.com/seu-usuario/processar-imoveis.git
+cd processar-imoveis
 
-- Coloque sua planilha de imóveis (ex: imoveis.xlsx) na mesma pasta do script.
+text
 
-- Execute o comando:
+2. Crie um ambiente virtual (recomendado):
+python -m venv venv
+source venv/bin/activate # Linux/Mac
+venv\Scripts\activate # Windows
 
-- python processar.py [CAMINHO_DA_PLANILHA] [NOME_DA_ABA]
+text
 
+3. Instale as dependências:
+pip install -r requirements.txt
 
-- Caso não forneça argumentos, o script usa os padrões:
+text
 
-- Planilha: Teste tit2.xlsx
+## 🎯 Uso
 
-Aba: Planilha1
+### Execução básica
+python main.py "Teste tit2.xlsx" "Planilha1"
 
-## 📘 Exemplo:
+text
 
-- python processar.py "imoveis.xlsx" "Planilha1"
+### Parâmetros
+- **Argumento 1** (opcional): Caminho do arquivo Excel de entrada
+  - Padrão: `Teste tit2.xlsx`
+- **Argumento 2** (opcional): Nome da planilha a processar
+  - Padrão: `Planilha1`
 
+### Variáveis de ambiente
+Crie um arquivo `.env` (já ignorado no `.gitignore`) para sobrescrever configurações:
 
-## 💾 O resultado será salvo automaticamente em:
-- dados_formatados.xlsx
+INPUT_FILE=seu_arquivo.xlsx
+INPUT_SHEET=NomeDaPlanilha
+OUTPUT_FILE=saida_customizada.xlsx
 
-## 🧾 Exemplo de Card Gerado
-- Residencial Sol. Apartamento, 73,76 m² de área total, 65 m² de área privativa, 2 quartos, 2 wcs.
+text
 
-- Andar alto; nascente.
+### Exemplo de saída
+O script gera um arquivo `dados_formatados.xlsx` com:
+- Uma única planilha "Registros"
+- Cada imóvel em uma célula da coluna A (A1, A2, A3, ...)
+- Texto centralizado com quebra de linha automática
+- Bordas ao redor de cada "card"
+- Formatação brasileira: vírgula como separador decimal, m² para áreas
 
-- IPTU: 950,5
-- Matrícula: 12345  Ofício: 2º.
+## 📊 Formato de Entrada
 
-## 📥 Entrada Esperada
+A planilha de entrada deve seguir este layout (índices 0-based):
 
-- A planilha de entrada deve conter colunas (por índice fixo) correspondentes a:
+| Coluna | Índice | Descrição |
+|--------|--------|-----------|
+| A | 0 | Empreendimento |
+| B | 1 | Tipo do imóvel |
+| D | 3 | Área total |
+| G | 6 | Área privativa |
+| J | 9 | Área do terreno |
+| L | 11 | Quantidade de quartos |
+| M | 12 | Rótulo "quartos" |
+| N | 13 | Vaga (texto livre) |
+| ... | ... | ... |
+| Y | 24 | Descrição adicional |
+| AA | 26 | IPTU |
+| AC | 28 | Matrícula |
+| AE | 30 | Ofício |
 
-- Empreendimento
+## 🧪 Testes
 
-- Tipo de imóvel
+(Futuro: adicionar testes unitários com pytest)
 
-- Áreas (total, privativa, terreno)
+pytest tests/
 
-- Quantidade e tipo de cômodos (quartos, wcs, varandas, salas, etc.)
+text
 
-- Descrição, IPTU, matrícula, ofício
+## 🏗️ Arquitetura
 
-- Consulte o dicionário IDX no código-fonte caso queira adaptar para outros layouts de planilha.
+O projeto segue princípios da **Arquitetura Hexagonal**:
 
-## 🧠 Principais Funções e Lógica
+- **Domínio** (`domain/`): Regras de negócio puras, sem dependências externas
+- **Aplicação** (`application/`): Orquestração dos casos de uso
+- **Infraestrutura** (`infrastructure/`): Adaptadores para Excel (I/O)
+- **Config** (`config.py`): Configurações centralizadas e injetáveis
 
-- Leitura otimizada com read_only=True e data_only=True (melhor performance).
+### Benefícios
+- ✅ Testabilidade: camadas isoladas facilitam mocks
+- ✅ Manutenibilidade: mudanças localizadas
+- ✅ Escalabilidade: fácil adicionar novos adaptadores (JSON, CSV, DB)
 
-- Conversão de cada linha (exceto cabeçalho) em texto descritivo formatado.
+## 🤝 Contribuindo
 
-- Ajuste automático de altura e quebra de linha para não cortar conteúdo.
+1. Fork o projeto
+2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
+3. Commit suas mudanças (`git commit -m 'feat: adiciona nova feature'`)
+4. Push para a branch (`git push origin feature/MinhaFeature`)
+5. Abra um Pull Request
 
-- Aplicação de bordas e centralização no Excel.
+### Convenção de commits
+- `feat:` nova funcionalidade
+- `fix:` correção de bug
+- `docs:` apenas documentação
+- `refactor:` refatoração sem mudar comportamento
+- `test:` adiciona ou corrige testes
 
-- Mensagens informativas de sucesso, erro e status da execução.
+## 📝 Licença
 
-## 💡 Sugestões de Melhoria
+Este projeto é proprietário e de uso interno da empresa.
 
-- Parâmetros opcionais para layout (largura de coluna, fonte, aba de saída).
+## 👤 Autor
 
-- Exportação para outros formatos: CSV, Markdown, PDF.
+**Seu Nome**
+- GitHub: [@seu-usuario](https://github.com/seu-usuario)
+- LinkedIn: [Seu Perfil](https://linkedin.com/in/seu-perfil)
 
-- Validação automática das colunas obrigatórias.
+## 🙏 Agradecimentos
 
-- Implementação de testes unitários nas funções de formatação.
+Desenvolvido para otimizar processos internos e reduzir perdas operacionais.
+requirements.txt
+Liste as dependências do projeto.​
 
-## 📄 Licença
-
-- Distribuído sob a Licença MIT.
-- Sinta-se à vontade para colaborar, adaptar ou sugerir melhorias! 
-
-
-
+text
+openpyxl==3.1.2
+Comandos para subir no Git
+bash
+git init
+git add .gitignore README.md requirements.txt
+git add domain/ application/ infrastructure/ config.py main.py
+git commit -m "feat: adiciona processador de imóveis com arquitetura hexagonal"
+git branch -M main
+git remote add origin https://github.com/seu-usuario/processar-imoveis.git
+git push -u origin main
