@@ -37,89 +37,90 @@ Ideal para **padronizar descrições de imóveis** e **otimizar processos admini
 - Python **3.x**
 - Biblioteca **openpyxl**
 
-Instale as dependências com:
+# Instale as dependências com:
 
 ```bash
 pip install openpyxl
+```
 
-🚀 Como Usar
+## 🚀 Como Usar
 
-Coloque sua planilha de imóveis (ex: imoveis.xlsx) na mesma pasta do script.
+- Coloque sua planilha de imóveis (ex: imoveis.xlsx) na mesma pasta do script.
 
-Execute o comando:
+- Execute o comando:
 
-python processar.py [CAMINHO_DA_PLANILHA] [NOME_DA_ABA]
+- python processar.py [CAMINHO_DA_PLANILHA] [NOME_DA_ABA]
 
 
-Caso não forneça argumentos, o script usa os padrões:
+- Caso não forneça argumentos, o script usa os padrões:
 
-Planilha: Teste tit2.xlsx
+- Planilha: Teste tit2.xlsx
 
 Aba: Planilha1
 
-📘 Exemplo:
+## 📘 Exemplo:
 
-python processar.py "imoveis.xlsx" "Planilha1"
+- python processar.py "imoveis.xlsx" "Planilha1"
 
 
-💾 O resultado será salvo automaticamente em:
-dados_formatados.xlsx
+## 💾 O resultado será salvo automaticamente em:
+- dados_formatados.xlsx
 
-🧾 Exemplo de Card Gerado
-Residencial Sol. Apartamento, 73,76 m² de área total, 65 m² de área privativa, 2 quartos, 2 wcs.
+## 🧾 Exemplo de Card Gerado
+- Residencial Sol. Apartamento, 73,76 m² de área total, 65 m² de área privativa, 2 quartos, 2 wcs.
 
-Andar alto; nascente.
+- Andar alto; nascente.
 
-IPTU: 950,5
-Matrícula: 12345  Ofício: 2º.
+- IPTU: 950,5
+- Matrícula: 12345  Ofício: 2º.
 
-📥 Entrada Esperada
+## 📥 Entrada Esperada
 
-A planilha de entrada deve conter colunas (por índice fixo) correspondentes a:
+- A planilha de entrada deve conter colunas (por índice fixo) correspondentes a:
 
-Empreendimento
+- Empreendimento
 
-Tipo de imóvel
+- Tipo de imóvel
 
-Áreas (total, privativa, terreno)
+- Áreas (total, privativa, terreno)
 
-Quantidade e tipo de cômodos (quartos, wcs, varandas, salas, etc.)
+- Quantidade e tipo de cômodos (quartos, wcs, varandas, salas, etc.)
 
-Descrição, IPTU, matrícula, ofício
+- Descrição, IPTU, matrícula, ofício
 
-Consulte o dicionário IDX no código-fonte caso queira adaptar para outros layouts de planilha.
+- Consulte o dicionário IDX no código-fonte caso queira adaptar para outros layouts de planilha.
 
-🧠 Principais Funções e Lógica
+## 🧠 Principais Funções e Lógica
 
-Leitura otimizada com read_only=True e data_only=True (melhor performance).
+- Leitura otimizada com read_only=True e data_only=True (melhor performance).
 
-Conversão de cada linha (exceto cabeçalho) em texto descritivo formatado.
+- Conversão de cada linha (exceto cabeçalho) em texto descritivo formatado.
 
-Ajuste automático de altura e quebra de linha para não cortar conteúdo.
+- Ajuste automático de altura e quebra de linha para não cortar conteúdo.
 
-Aplicação de bordas e centralização no Excel.
+- Aplicação de bordas e centralização no Excel.
 
-Mensagens informativas de sucesso, erro e status da execução.
+- Mensagens informativas de sucesso, erro e status da execução.
 
-💡 Sugestões de Melhoria
+## 💡 Sugestões de Melhoria
 
-Parâmetros opcionais para layout (largura de coluna, fonte, aba de saída).
+- Parâmetros opcionais para layout (largura de coluna, fonte, aba de saída).
 
-Exportação para outros formatos: CSV, Markdown, PDF.
+- Exportação para outros formatos: CSV, Markdown, PDF.
 
-Validação automática das colunas obrigatórias.
+- Validação automática das colunas obrigatórias.
 
-Implementação de testes unitários nas funções de formatação.
+- Implementação de testes unitários nas funções de formatação.
 
-📄 Licença
+## 📄 Licença
 
-Distribuído sob a Licença MIT.
-Sinta-se à vontade para colaborar, adaptar ou sugerir melhorias! 💻
+- Distribuído sob a Licença MIT.
+- Sinta-se à vontade para colaborar, adaptar ou sugerir melhorias! 💻
 
-🧑‍💻 Autor: Roberth Furtado
-📅 Versão: 1.0
-📦 Linguagem: Python 3
-📚 Dependências: openpyxl
+## 🧑‍💻 Autor: Roberth Furtado
+## 📅 Versão: 1.0
+## 📦 Linguagem: Python 3
+## 📚 Dependências: openpyxl
 
 
 
