@@ -115,12 +115,7 @@ Aba: Planilha1
 ## 📄 Licença
 
 - Distribuído sob a Licença MIT.
-- Sinta-se à vontade para colaborar, adaptar ou sugerir melhorias! 💻
-
-## 🧑‍💻 Autor: Roberth Furtado
-## 📅 Versão: 1.0
-## 📦 Linguagem: Python 3
-## 📚 Dependências: openpyxl
+- Sinta-se à vontade para colaborar, adaptar ou sugerir melhorias! 
 
 
 
