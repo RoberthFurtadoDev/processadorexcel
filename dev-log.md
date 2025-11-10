@@ -26,3 +26,4 @@ Registro técnico 22 gerado em 10/11/2025 13:48:46
 Registro técnico 23 gerado em 10/11/2025 13:48:46
 Registro técnico 24 gerado em 10/11/2025 13:48:46
 Registro técnico 25 gerado em 10/11/2025 13:48:47
+Registro técnico 26 gerado em 10/11/2025 13:48:47
