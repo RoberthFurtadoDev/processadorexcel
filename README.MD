@@ -12,27 +12,6 @@ Este projeto foi desenvolvido para atender uma demanda específica da empresa, a
 - **openpyxl** - Manipulação de arquivos Excel (.xlsx)
 - **Arquitetura Hexagonal** - Separação em camadas (domínio, aplicação, infraestrutura)
 
-## 📁 Estrutura do Projeto
-processar_refatorado/
-├── domain/
-│   ├── __init__.py
-│   ├── entities.py          # Entidades de domínio (Imovel)
-│   └── services.py          # Serviços (formatação de números e rótulos)
-│
-├── application/
-│   ├── __init__.py
-│   └── use_cases.py         # Caso de uso: ProcessarImoveisUseCase
-│
-├── infrastructure/
-│   ├── __init__.py
-│   ├── excel_reader.py      # Adaptador de leitura Excel
-│   └── excel_writer.py      # Adaptador de escrita Excel
-│
-├── config.py                # Configurações centralizadas
-├── main.py                  # Ponto de entrada
-├── .gitignore              # Arquivos ignorados no Git
-├── README.md               # Documentação do projeto
-└── requirements.txt        # Dependências Python
 ## ⚙️ Instalação
 
 ### Pré-requisitos
