@@ -32,8 +32,6 @@ processar_refatorado/
 ├── README.md
 └── requirements.txt
 
-text
-
 ## ⚙️ Instalação
 
 ### Pré-requisitos
@@ -42,30 +40,20 @@ text
 
 ### Passos
 
-1. Clone o repositório:
+- 1. Clone o repositório:
 git clone https://github.com/seu-usuario/processar-imoveis.git
 cd processar-imoveis
 
-text
-
-2. Crie um ambiente virtual (recomendado):
+- 2. Crie um ambiente virtual (recomendado):
 python -m venv venv
 source venv/bin/activate # Linux/Mac
 venv\Scripts\activate # Windows
 
-text
-
-3. Instale as dependências:
+- 3. Instale as dependências:
 pip install -r requirements.txt
 
-text
-
-## 🎯 Uso
-
 ### Execução básica
-python main.py "Teste tit2.xlsx" "Planilha1"
-
-text
+- python main.py "Teste tit2.xlsx" "Planilha1"
 
 ### Parâmetros
 - **Argumento 1** (opcional): Caminho do arquivo Excel de entrada
@@ -76,11 +64,9 @@ text
 ### Variáveis de ambiente
 Crie um arquivo `.env` (já ignorado no `.gitignore`) para sobrescrever configurações:
 
-INPUT_FILE=seu_arquivo.xlsx
-INPUT_SHEET=NomeDaPlanilha
-OUTPUT_FILE=saida_customizada.xlsx
-
-text
+- INPUT_FILE=seu_arquivo.xlsx
+- INPUT_SHEET=NomeDaPlanilha
+- OUTPUT_FILE=saida_customizada.xlsx
 
 ### Exemplo de saída
 O script gera um arquivo `dados_formatados.xlsx` com:
@@ -110,14 +96,6 @@ A planilha de entrada deve seguir este layout (índices 0-based):
 | AC | 28 | Matrícula |
 | AE | 30 | Ofício |
 
-## 🧪 Testes
-
-(Futuro: adicionar testes unitários com pytest)
-
-pytest tests/
-
-text
-
 ## 🏗️ Arquitetura
 
 O projeto segue princípios da **Arquitetura Hexagonal**:
@@ -146,31 +124,3 @@ O projeto segue princípios da **Arquitetura Hexagonal**:
 - `docs:` apenas documentação
 - `refactor:` refatoração sem mudar comportamento
 - `test:` adiciona ou corrige testes
-
-## 📝 Licença
-
-Este projeto é proprietário e de uso interno da empresa.
-
-## 👤 Autor
-
-**Seu Nome**
-- GitHub: [@seu-usuario](https://github.com/seu-usuario)
-- LinkedIn: [Seu Perfil](https://linkedin.com/in/seu-perfil)
-
-## 🙏 Agradecimentos
-
-Desenvolvido para otimizar processos internos e reduzir perdas operacionais.
-requirements.txt
-Liste as dependências do projeto.​
-
-text
-openpyxl==3.1.2
-Comandos para subir no Git
-bash
-git init
-git add .gitignore README.md requirements.txt
-git add domain/ application/ infrastructure/ config.py main.py
-git commit -m "feat: adiciona processador de imóveis com arquitetura hexagonal"
-git branch -M main
-git remote add origin https://github.com/seu-usuario/processar-imoveis.git
-git push -u origin main
