@@ -76,3 +76,4 @@ Registro técnico 72 gerado em 10/11/2025 13:48:56
 Registro técnico 73 gerado em 10/11/2025 13:48:56
 Registro técnico 74 gerado em 10/11/2025 13:48:56
 Registro técnico 75 gerado em 10/11/2025 13:48:56
+Registro técnico 76 gerado em 10/11/2025 13:48:57
